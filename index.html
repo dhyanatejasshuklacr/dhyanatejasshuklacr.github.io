@@ -5,21 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dhyana Tejas Shukla C R – Portfolio & Resume</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* ...existing styles from previous answer... */
-
-    /* Animation styles */
-    .fade-in {
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f3f4f6 0%, #fafafa 100%);
+      color: #374151;
+    }
+    .fade-in-section {
       opacity: 0;
       transform: translateY(40px);
-      transition: opacity 0.7s, transform 0.7s;
+      transition: opacity 1s, transform 1s;
     }
-    .fade-in.visible {
+    .fade-in-section.is-visible {
       opacity: 1;
-      transform: translateY(0);
+      transform: none;
     }
     .btn {
-      /* ...existing styles... */
       position: relative;
       overflow: hidden;
     }
@@ -30,7 +32,7 @@
       top: 0;
       width: 200%;
       height: 100%;
-      background: linear-gradient(90deg, rgba(124,58,237,0.15), rgba(26,35,126,0.15));
+      background: linear-gradient(90deg, rgba(124,58,237,0.15), rgba(26,35,126,0.14));
       transition: left 0.4s;
       z-index: 0;
     }
@@ -45,54 +47,64 @@
     .btn:hover span {
       transform: scale(1.08) rotate(-2deg);
     }
-    /* Card hover */
-    .card:hover {
-      box-shadow: 0 8px 24px rgba(124,58,237,0.15);
-      transform: translateY(-6px) scale(1.03);
-      transition: box-shadow 0.3s, transform 0.3s;
-    }
-    /* Active navbar */
-    .navbar a.active {
-      background: var(--accent);
-      color: #fff;
+    nav a.active,
+    nav a.bg-purple-600 {
+      background: #7c3aed;
+      color: #fff !important;
       box-shadow: 0 2px 12px rgba(124,58,237,0.16);
     }
   </style>
 </head>
 <body>
-  <nav class="navbar">
-    <a href="#about">About</a>
-    <a href="#resume">Resume</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#contact">Contact</a>
+  <!-- Sticky Navigation Bar -->
+  <nav class="fixed w-full top-0 left-0 z-50 bg-white/90 shadow flex justify-center py-2 space-x-3 border-b border-gray-200">
+    <a href="#about" class="px-3 py-1 rounded transition-colors hover:bg-purple-50">About</a>
+    <a href="#resume" class="px-3 py-1 rounded transition-colors hover:bg-purple-50">Resume</a>
+    <a href="#skills" class="px-3 py-1 rounded transition-colors hover:bg-purple-50">Skills</a>
+    <a href="#projects" class="px-3 py-1 rounded transition-colors hover:bg-purple-50">Projects</a>
+    <a href="#certifications" class="px-3 py-1 rounded transition-colors hover:bg-purple-50">Certifications</a>
+    <a href="#contact" class="px-3 py-1 rounded transition-colors hover:bg-purple-50">Contact</a>
   </nav>
-  <div class="container">
-    <header>
-      <h1>Dhyana Tejas Shukla C R</h1>
-      <p>EEE Student | VLSI & AI Enthusiast | Innovator</p>
-      <div class="contact-links">
-        <span>📞 +91 8618477927</span>
-        <span>✉️ <a href="mailto:dhyanatejasshukla@gmail.com">dhyanatejasshukla@gmail.com</a></span>
-        <span>📍 Oolavadi, Chikkaballapur, 563125</span>
-        <span>🔗 <a href="https://linkedin.com/in/dhyanatejasshuklacr" target="_blank">LinkedIn</a></span>
-        <span>🐙 <a href="https://github.com/dhyanatejasshuklacr" target="_blank">GitHub</a></span>
+  <div class="h-11"></div> <!-- Spacer for sticky navbar -->
+
+  <div class="container mx-auto max-w-4xl px-4 md:px-10 py-6">
+    <!-- Header -->
+    <header class="text-center mb-14 fade-in-section">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-3">Dhyana Tejas Shukla C R</h1>
+      <p class="mb-2 font-medium text-purple-700">EEE Student | VLSI & AI Enthusiast | Innovator</p>
+      <div class="flex flex-wrap justify-center gap-6 text-sm md:text-base text-gray-600 mb-2">
+        <div class="flex items-center gap-2"><span>📞</span><span>+91 8618477927</span></div>
+        <div class="flex items-center gap-2">
+          <span>✉️</span>
+          <a href="mailto:dhyanatejasshukla@gmail.com" class="hover:underline">dhyanatejasshukla@gmail.com</a>
+        </div>
+        <div class="flex items-center gap-2"><span>📍</span><span>Oolavadi, Chikkaballapur, 563125</span></div>
+        <div class="flex items-center gap-2">
+          <span>🔗</span>
+          <a href="https://linkedin.com/in/dhyanatejasshuklacr" target="_blank" class="hover:underline">LinkedIn</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <span>🐙</span>
+          <a href="https://github.com/dhyanatejasshuklacr" target="_blank" class="hover:underline">GitHub</a>
+        </div>
       </div>
+      <div class="h-1 w-24 mx-auto mt-5 bg-gradient-to-r from-purple-300/0 via-purple-500/80 to-purple-300/0 rounded-full"></div>
     </header>
 
-    <section id="about" class="fade-in">
-      <h2>About Me</h2>
+    <section id="about" class="fade-in-section mb-14">
+      <h2 class="text-2xl font-bold text-gray-800 underline underline-offset-8 decoration-4 decoration-purple-400 mb-4">About Me</h2>
       <p>
         Hi, I'm Dhyana Tejas Shukla, an Electrical & Electronics Engineering student with a keen interest in VLSI, Embedded Systems, and Artificial Intelligence. Driven by curiosity and innovation, I enjoy hands-on projects, collaborating on research, and exploring cutting-edge technology. My goal is to develop impactful solutions and grow as a tech innovator.
       </p>
     </section>
 
-    <section id="resume" class="fade-in">
-      <h2>Resume</h2>
-      <div class="section-row">
-        <div>
-          <ul class="resume-list">
+    <div class="h-px w-full bg-gradient-to-r from-purple-400/0 via-purple-400 to-purple-400/0 mb-11"></div>
+
+    <section id="resume" class="fade-in-section mb-14">
+      <h2 class="text-2xl font-bold text-gray-800 underline underline-offset-8 decoration-4 decoration-purple-400 mb-4">Resume</h2>
+      <div class="md:flex gap-10">
+        <div class="mb-6 md:mb-0 md:w-1/2">
+          <ul class="space-y-2">
             <li><strong>Date of Birth:</strong> 24 Feb 2006</li>
             <li><strong>Languages:</strong> Kannada, English, Hindi, Telugu</li>
             <li><strong>Nationality:</strong> Indian</li>
@@ -100,14 +112,13 @@
             <li><strong>Mother’s Name:</strong> Sudha M N</li>
             <li><strong>Marital Status:</strong> Unmarried</li>
           </ul>
-          <div class="contact-info">
-            <span class="sub-heading">Download Resume</span>
-            <a class="btn" href="resume.pdf" target="_blank"><span>Download PDF</span></a>
+          <div class="mt-4">
+            <a class="btn relative inline-block px-5 py-2 font-semibold text-purple-700 transition duration-300 rounded-md hover:bg-purple-50" href="resume.pdf" target="_blank"><span>Download PDF</span></a>
           </div>
         </div>
-        <div>
-          <span class="sub-heading">Education</span>
-          <ul class="resume-list">
+        <div class="md:w-1/2">
+          <span class="font-semibold text-lg text-purple-700">Education</span>
+          <ul class="space-y-2 mt-2">
             <li>
               <strong>B.E. – Electrical & Electronics Engineering</strong><br>
               Malnad College of Engineering, Hassan<br>
@@ -129,72 +140,61 @@
       </div>
     </section>
 
-    <section id="skills" class="fade-in">
-      <h2>Technical Skills & Interests</h2>
-      <div class="section-row">
-        <div>
-          <div class="card">
-            <h3>Programming</h3>
-            <p>C, Python (loops, functions, arrays)</p>
-          </div>
-          <div class="card">
-            <h3>Embedded Systems</h3>
-            <p>Arduino Uno, motor drivers, sensor interfacing</p>
-          </div>
-          <div class="card">
-            <h3>Digital Electronics</h3>
-            <p>Logic gates, flip-flops, counters, multiplexers</p>
-          </div>
-          <div class="card">
-            <h3>VLSI & Semiconductor</h3>
-            <p>Basic digital circuit design, semiconductor devices</p>
-          </div>
+    <div class="h-px w-full bg-gradient-to-r from-purple-400/0 via-purple-400 to-purple-400/0 mb-11"></div>
+
+    <section id="skills" class="fade-in-section mb-14">
+      <h2 class="text-2xl font-bold text-gray-800 underline underline-offset-8 decoration-4 decoration-purple-400 mb-4">Technical Skills & Interests</h2>
+      <div class="md:flex gap-10">
+        <div class="md:w-1/2 mb-6 md:mb-0">
+          <ul class="space-y-2">
+            <li><strong>Programming:</strong> C, Python (loops, functions, arrays)</li>
+            <li><strong>Embedded Systems:</strong> Arduino Uno, motor drivers, sensor interfacing</li>
+            <li><strong>Digital Electronics:</strong> Logic gates, flip-flops, counters, multiplexers</li>
+            <li><strong>VLSI & Semiconductor:</strong> Digital circuit, semiconductor basics</li>
+            <li><strong>Software:</strong> Ubuntu Linux, MS Office, AWS (intro)</li>
+            <li><strong>Research:</strong> Co-author IEEE paper, publication workflow</li>
+          </ul>
         </div>
-        <div>
-          <div class="card">
-            <h3>Software & Tools</h3>
-            <p>Ubuntu Linux, MS Office Suite, AWS (intro)</p>
-          </div>
-          <div class="card">
-            <h3>Research & Publication</h3>
-            <p>Co-author IEEE paper, academic writing, publication workflow</p>
-          </div>
-          <div class="card">
-            <h3>Interests</h3>
-            <ul>
-              <li>VLSI and AI research</li>
-              <li>Tech blogs & online learning</li>
-              <li>Hands-on projects</li>
-              <li>Music & creative innovation</li>
-            </ul>
-          </div>
+        <div class="md:w-1/2">
+          <ul class="space-y-2">
+            <li><strong>Interests:</strong>
+              <ul class="list-disc list-inside">
+                <li>VLSI and AI research</li>
+                <li>Tech blogs & online learning</li>
+                <li>Hands-on projects</li>
+                <li>Music & creative innovation</li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="fade-in">
-      <h2>Projects</h2>
-      <div class="projects-grid">
-        <div class="card">
-          <h3>Thermal Detection Camera for Forest Fire Reduction</h3>
+    <div class="h-px w-full bg-gradient-to-r from-purple-400/0 via-purple-400 to-purple-400/0 mb-11"></div>
+
+    <section id="projects" class="fade-in-section mb-14">
+      <h2 class="text-2xl font-bold text-gray-800 underline underline-offset-8 decoration-4 decoration-purple-400 mb-4">Projects</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-semibold text-lg text-gray-900">Thermal Detection Camera for Forest Fire Reduction</h3>
           <p>
             Developed a prototype with ~80% accuracy for thermal detection. Experience with Ubuntu Linux, sensor integration, and testing workflows.
           </p>
         </div>
-        <div class="card">
-          <h3>Object Following Robot</h3>
+        <div>
+          <h3 class="font-semibold text-lg text-gray-900">Object Following Robot</h3>
           <p>
             Built using Arduino Uno & IR sensors for real-time tracking. Enhanced skills in embedded programming and sensor interfacing.
           </p>
         </div>
-        <div class="card">
-          <h3>LIDAR-Based Autonomous Robot</h3>
+        <div>
+          <h3 class="font-semibold text-lg text-gray-900">LIDAR-Based Autonomous Robot</h3>
           <p>
             Led analysis & documentation and improved obstacle detection (approx. 30° accuracy). Collaborated via GitHub workflow.
           </p>
         </div>
-        <div class="card">
-          <h3>AI Imaging for Ovarian Cancer Detection</h3>
+        <div>
+          <h3 class="font-semibold text-lg text-gray-900">AI Imaging for Ovarian Cancer Detection</h3>
           <p>
             Co-authored an IEEE conference paper. Assisted with data analysis and applied AI for medical image recognition.
           </p>
@@ -202,9 +202,11 @@
       </div>
     </section>
 
-    <section id="certifications" class="fade-in">
-      <h2>Certifications</h2>
-      <ul class="resume-list">
+    <div class="h-px w-full bg-gradient-to-r from-purple-400/0 via-purple-400 to-purple-400/0 mb-11"></div>
+
+    <section id="certifications" class="fade-in-section mb-14">
+      <h2 class="text-2xl font-bold text-gray-800 underline underline-offset-8 decoration-4 decoration-purple-400 mb-4">Certifications</h2>
+      <ul class="space-y-2">
         <li>Microsoft Skills Certification – Digital skills</li>
         <li>AWS (Beginner Level) – Cloud fundamentals</li>
         <li>CMTI Innovation Clinic – Thermal detection contribution</li>
@@ -212,63 +214,55 @@
       </ul>
     </section>
 
-    <section id="contact" class="fade-in">
-      <h2>Contact</h2>
-      <div class="contact-info">
-        <p><strong>Email:</strong> <a href="mailto:dhyanatejasshukla@gmail.com">dhyanatejasshukla@gmail.com</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/dhyanatejasshuklacr" target="_blank">github.com/dhyanatejasshuklacr</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/dhyanatejasshuklacr" target="_blank">linkedin.com/in/dhyanatejasshuklacr</a></p>
+    <div class="h-px w-full bg-gradient-to-r from-purple-400/0 via-purple-400 to-purple-400/0 mb-11"></div>
+
+    <section id="contact" class="fade-in-section mb-14">
+      <h2 class="text-2xl font-bold text-gray-800 underline underline-offset-8 decoration-4 decoration-purple-400 mb-4">Contact</h2>
+      <div class="space-y-2">
+        <p><strong>Email:</strong> <a href="mailto:dhyanatejasshukla@gmail.com" class="hover:underline">dhyanatejasshukla@gmail.com</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/dhyanatejasshuklacr" target="_blank" class="hover:underline">github.com/dhyanatejasshuklacr</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/dhyanatejasshuklacr" target="_blank" class="hover:underline">linkedin.com/in/dhyanatejasshuklacr</a></p>
         <p><strong>Phone:</strong> +91 8618477927</p>
       </div>
     </section>
   </div>
-  <footer>
+  <footer class="w-full py-8 text-center text-sm text-gray-500 border-t border-gray-200 mt-16">
     &copy; 2025 Dhyana Tejas Shukla C R | Portfolio & Resume
   </footer>
-  <script>
-    // Section fade-in animation on scroll
-    function revealOnScroll() {
-      document.querySelectorAll('.fade-in').forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 60) {
-          el.classList.add('visible');
-        }
-      });
-    }
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
 
-    // Navbar active link highlight
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.navbar a');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 80;
-        if (window.scrollY >= sectionTop) {
-          current = section.getAttribute('id');
-        }
-      });
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
-          link.classList.add('active');
+  <script>
+    // Fade-in animation logic
+    document.addEventListener("DOMContentLoaded", function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      }, { threshold: 0.18 });
+      document.querySelectorAll('.fade-in-section').forEach(e => observer.observe(e));
+    });
+
+    // Navbar highlight and smooth scroll
+    const navLinks = document.querySelectorAll("nav a");
+    window.addEventListener("scroll", () => {
+      let found = false;
+      document.querySelectorAll("section").forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if(rect.top <= 60 && rect.bottom > 60 && !found) {
+          navLinks.forEach(l => l.classList.remove("bg-purple-600", "text-white", "active"));
+          const activeLink = document.querySelector(`nav a[href="#${section.id}"]`);
+          if(activeLink) activeLink.classList.add("bg-purple-600", "text-white", "active");
+          found = true;
         }
       });
     });
-
-    // Smooth scroll on navbar click
-    document.querySelectorAll('.navbar a').forEach(link => {
-      link.addEventListener('click', function(e) {
+    navLinks.forEach(link => {
+      link.addEventListener("click", function(e) {
         e.preventDefault();
-        const id = this.getAttribute('href').slice(1);
-        const section = document.getElementById(id);
-        if (section) {
-          window.scrollTo({
-            top: section.offsetTop - 40,
-            behavior: 'smooth'
-          });
-        }
+        const targetId = this.getAttribute('href').replace('#','');
+        const el = document.getElementById(targetId);
+        if(el) window.scrollTo({ top: el.offsetTop - 60, behavior: 'smooth' });
       });
     });
   </script>
